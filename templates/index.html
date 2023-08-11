@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<title>Sentiment Analysis App</title>
+
+    </style>
+</head>
+<body>
+
+	<h1>Sentiment Analysis App</h1>
+	<form action="/analyze" method="POST">
+		<label for="text">Enter text:</label><br>
+        <textarea name="text" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Analyze">
+
+    </form>
+    {% if text %}
+    <h2>Analysis Result:</h2>
+
+    <p>Entered Text: {{ text }}</p>
+    <p>Sentiment: {{ sentiment }}</p>
+    <p>Positive Score: {{ text_scores['pos'] }}</p>
+    <p>Negative Score: {{ text_scores['neg'] }}</p>
+    <p>Neutral Score: {{ text_scores['neu'] }}</p>
+    <p>Compound Score: {{ text_scores['compound'] }}</p>
+
+    {% endif %}
+
+</body>
+</html>
